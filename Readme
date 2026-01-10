@@ -1,0 +1,26 @@
+# STEP 1: Install required package
+pip install optuna
+pip install xgboost
+pip install imbalanced-learn
+
+
+
+python feature_engineering_optimal.py
+
+
+# STEP 2: Add advanced features
+python add_interaction_features.py
+# Expected improvement: +1-3% accuracy
+# Time: 2-5 minutes
+
+# STEP 3: Tune hyperparameters
+python hyperparameter_tuning.py
+# Expected improvement: +2-4% accuracy
+# Time: 30-60 minutes (for N_TRIALS=30)
+
+# STEP 4: Update train_model.py with best parameters
+# Copy parameters from best_params.txt into your training code
+
+# STEP 5: Train final model
+# Update INPUT_PATH = "processed_dataset_v2.csv" in train_model.py
+python train_model.py
